@@ -1,0 +1,32 @@
+<% include parciales/header %>
+
+<div class="container">
+	<div class="centrado">
+		<div class="row"> 
+			<div class="panel panel-default">
+				<div class="panel-heading show">
+					<div class="panel-title">
+						<h1 class="text-center"><%= club.nombre %></h1>
+					</div>
+				</div>
+				<div class="panel-body">
+					<div class="media">
+						<p><img src="<%=club.imagen%>"></p>
+					</div>
+					<p><%= club.desc %></p>
+					<p>Submitted by <strong><%= club.autor.username %></strong></p>
+					<p><a href="/clubs" class="btn btn-primary">Go back</a> <a href="/clubs/<%= club._id%>/edit" class='btn btn-warning'>Editar</a> <a href="/clubs/<%= club._id%>/comments/new" class='btn btn-primary pull-right'>Crear nuevo comentario</a></p>
+					<% club.comentarios.forEach(function(comentario){ %>
+						<p><%= comentario.author.username %></p>
+						<p><%= comentario.text %></p>
+						<a href="/clubs/<%= club._id%>/comments/<%=comentario._id%>/edit">Editar comentario</a>
+					<%});%>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<% include parciales/footer %>

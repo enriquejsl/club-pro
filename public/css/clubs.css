@@ -1,0 +1,14 @@
+.centrado {
+	width: 50%;
+	margin: 25px auto;
+}
+
+.show {
+	background-color: #d4c1c1 !important;
+}
+
+.media img{
+	width: 100%;
+	height: 100%;
+}
+

@@ -1,0 +1,29 @@
+<% include parciales/header %>
+
+<div class="container">
+
+	<div class="row text-center">
+		<h1>Edit <%= club.nombre %></h1>
+		<div style="width: 30%; margin: 25px auto;">
+			<form method="post" action="/clubs/<%= club._id%>?_method=PUT">
+				<div class="form-group">
+					<input class="form-control" type="text" name="club[nombre]" value="<%= club.nombre %>">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" name="club[imagen]" value="<%= club.imagen %>">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" name="club[desc]" value="<%= club.desc %>">
+				</div>
+				<div class="form-group">
+					<button class="btn btn-primary btn-lg btn-block" type="submit">Publicar</button>
+				</div>
+			</form>
+			<form method="post" action="/clubs/<%= club._id%>?_method=DELETE">
+				<button class="btn btn-danger">BORRAR</button>
+			</form>
+			<p><a href="/clubs/<%=club._id%>">Atras</a></p>
+		</div>
+	</div>
+</div>
+<% include parciales/footer %>
